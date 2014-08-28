@@ -25,10 +25,11 @@
         <ul class="nav nav-pills pull-right"  ng-controller="navCtrl">
            <li  ng-class="navClass('home')"><a ng-href="#">Home</a></li>
           <!-- <li><a ng-href="#/about">About</a></li> -->
-          <li  ng-class="navClass('employee')"><a ng-href="#/employee">Employee</a></li>
+          <li  ng-class="navClass('employee')"><a ng-href="#/employee-list">Employee</a></li>
+          <li  ng-class="navClass('project')"><a ng-href="#/project-list">Project</a></li>
           <!-- <li><a ng-href="#">Contact</a></li> -->
         </ul>
-        <h3 class="text-muted">Employee Application</h3>
+        <h3 class="text-muted">Resources Management</h3>
       </div>
 
       <div ng-view=""></div>
@@ -82,19 +83,28 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/ng-file-upload/angular-file-upload.js"></script>
     <script src="bower_components/ng-file-upload-shim/angular-file-upload-shim.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/angular-charts/dist/angular-charts.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/services/employee-service.js"></script>
-        <script src="scripts/controllers/employee.js"></script>
-        <script src="scripts/controllers/employee-edit.js"></script>
-        <script src="scripts/controllers/employee-new.js"></script>
-        <script src="scripts/controllers/employee-show.js"></script>
         <script src="scripts/controllers/nav-list.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <!-- add services here-->
+        <script src="scripts/services/employee/employee-service.js"></script>
+        <script src="scripts/services/project/project-service.js"></script>
+        <!--add controllers here -->
+        <script src="scripts/controllers/employee/employee-list.js"></script>
+        <script src="scripts/controllers/employee/employee-edit.js"></script>
+        <script src="scripts/controllers/employee/employee-new.js"></script>
+        <script src="scripts/controllers/employee/employee-show.js"></script>
+        <script src="scripts/controllers/project/project-list.js"></script>
+        <script src="scripts/controllers/project/project-new.js"></script>
+        <script src="scripts/controllers/project/project-show.js"></script>
+        <script src="scripts/controllers/project/project-edit.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>

@@ -1,0 +1,44 @@
+
+<table class="table table-striped table-bordered">
+	<tr>
+		<th>Project Name&nbsp;</th>
+		<th>{{project.name}}</th>
+	</tr>
+	<tr>
+		<th>Client Name&nbsp;</th>
+
+		<th>{{project.clientName}}</th>
+	</tr>
+	
+	<tr>
+		<th>Manager&nbsp;</th>
+
+		<th>{{project.manager.name}}</th>
+	</tr>
+	<tr>
+		<th>Start Date&nbsp;</th>
+
+		<th>{{project.startDate}}</th>
+	</tr>
+	<tr>
+		<th>Description&nbsp;</th>
+
+		<th>{{project.description}}</th>
+	</tr>
+	<tr>
+		<th>Resource count&nbsp;</th>
+
+		<th>{{project.resources.length+1}}</th>
+	</tr>
+</tr>
+<tr>
+	<th>Resources</th>
+	<th>&nbsp;</th>
+</tr>
+<tr ng-repeat = "resource in project.resources">
+	<th>Name&nbsp;</th>
+
+	<th>{{ resource.name}},{{resource.designation}}</th>
+</tr>
+</tr>
+</table>

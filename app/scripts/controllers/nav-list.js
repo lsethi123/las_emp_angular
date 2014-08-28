@@ -6,6 +6,10 @@ navList.controller('navCtrl', ['$scope', '$location', function ($scope, $locatio
         if (currentRoute.match('employee')){
         	currentRoute ='employee';
         }
+        else if(currentRoute.match('project')){
+
+        	currentRoute ='project';
+        }
 
         return page === currentRoute ? 'active' : '';
     };        

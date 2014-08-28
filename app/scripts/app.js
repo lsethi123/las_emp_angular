@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'navList'
+    'navList',
+    'angularCharts'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -24,25 +25,37 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/employee', {
-        templateUrl: 'views/employee.html',
-        controller: 'EmployeeCtrl'
+      .when('/employee-list', {
+        templateUrl: 'views/employee/employee-list.html',
+        controller: 'EmployeeListCtrl'
       })
       .when('/employee-new', {
-        templateUrl: 'views/partials/employee-new.html',
+        templateUrl: 'views/employee/employee-new.html',
         controller: 'EmployeeNewCtrl'
       })
       .when('/employee-edit/:id', {
-        templateUrl: 'views/partials/employee-edit.html',
+        templateUrl: 'views/employee/employee-edit.html',
         controller: 'EmployeeEditCtrl'
       })
       .when('/employee-show/:id', {
-        templateUrl: 'views/partials/employee-show.html',
+        templateUrl: 'views/employee/employee-show.html',
         controller: 'EmployeeShowCtrl'
+      })
+      .when('/project-list', {
+        templateUrl: 'views/project/project-list.html',
+        controller: 'ProjectListCtrl'
+      })
+      .when('/project-new', {
+        templateUrl: 'views/project/project-new.html',
+        controller: 'ProjectNewCtrl'
+      })
+      .when('/project-edit/:id', {
+        templateUrl: 'views/project/project-edit.html',
+        controller: 'ProjectEditCtrl'
+      })
+      .when('/project-show/:id', {
+        templateUrl: 'views/project/project-show.html',
+        controller: 'ProjectShowCtrl'
       })
       .otherwise({
         redirectTo: '/'

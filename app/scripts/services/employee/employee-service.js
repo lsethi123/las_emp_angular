@@ -9,7 +9,12 @@
     employeeService.listEmployees = function () {
         return $http.get(urlBase);
     };
-
+    employeeService.listAllManager = function () {
+        return $http.get(urlBase+'manager');
+    };
+    employeeService.listEmployeesByManager = function (id) {
+        return $http.get(urlBase+'manager/'+id);
+    };
     employeeService.getEmployee = function (id) {
         return $http.get(urlBase + id);
     };

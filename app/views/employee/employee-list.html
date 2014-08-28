@@ -1,0 +1,56 @@
+
+<div class="row">
+	<div class="col-md-12" data-ng-show="employees.length > 0">
+		
+		<a class="btn btn-success" href="#/employee-new"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add new Employee</a>
+
+		<span class="pull-right">
+			<strong>Search: </strong><input ng-model="searchText"></span>
+		</br>
+		</br>
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">List Employees</h3>
+		</div>
+	</div>
+    <div class="spinner" ng-show="loading"></div> 
+	<table class="table table-striped table-bordered">
+		<thead>
+			<th>Name&nbsp;</th>
+			<th>Address&nbsp;</th>
+			<th>Designation&nbsp;</th>
+			<th>Email&nbsp;</th>
+			<th>Phone&nbsp;</th>
+
+			<th>Manager Name&nbsp;</th>
+
+			<th>Act As&nbsp;</th>
+			<th colspan ="3">Action&nbsp;</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="employee in employees  | filter:searchText">
+				<td>{{employee.name}}</td>
+				<td>{{employee.address}}</td>
+				<td>{{employee.designation}}</td>
+				<td>{{employee.email}}</td>
+				<td>{{employee.phone}}</td>
+				<td>{{employee.manager.name}}</td>
+				<td><span  ng-if="employee.actAsManager" class="label label-warning">Manager</span></td>
+
+				<!-- <td><a href=""ng-click="sayHello(employee._id)" class="btn">&nbsp;<i class="glyphicon glyphicon-edit"></td> -->
+				<!-- <td><a href="#employee-edit/{{employee._id}}" class="btn">&nbsp;<i class="glyphicon glyphicon-edit"></td> -->
+
+				<td><a href="#employee-show/{{employee._id}}" class="btn">&nbsp;<i class="glyphicon glyphicon-eye-open" title="show"></td>
+				<td><a href="#employee-edit/{{employee._id}}" class="btn">&nbsp;<i class="glyphicon glyphicon-edit" title="Edit"></td>
+				<td><a href="#" ng-click="deleteEmployee(employee._id)" class="btn">&nbsp;<i class="glyphicon glyphicon-trash" title="Delete" ></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="col-md-12" data-ng-show="employees.length == 0">
+	<div class="col-md-12">
+		<h4>No employee found</h4>
+	</div>
+</div>
+</div>
